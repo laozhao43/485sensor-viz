@@ -49,8 +49,9 @@ SENSORS = [
     }
 ]
 
-# CSV file setup (unchanged)
-CSV_FILENAME = 'sensor_data.csv'
+# CSV file setup (changed to include start date and time)
+start_time_str = datetime.now().strftime('%Y%m%d_%H%M%S')
+CSV_FILENAME = f'sensor_data_{start_time_str}.csv'
 CSV_HEADER = ['Timestamp'] + [f"{sensor['NAME']} ({sensor['UNIT']})" for sensor in SENSORS]
 
 # --- Helper functions (mostly unchanged) ---
